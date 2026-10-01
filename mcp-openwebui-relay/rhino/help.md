@@ -2,9 +2,12 @@
 
 This plugin lets you talk to Rhino in plain language from an Open WebUI chat — "describe the
 active document", "make a box 10 by 10 by 10", "list the layers". You type in the chat, and
-Rhino does it.
+Rhino does it. It adds tools to your existing model, so if it is able of advanced reasoning and
+web search, it can do things like "Take this reference, search the internet for additional
+material and and model it"
 
-It is an independent, experimental tool. It is not made by McNeel and not by Open WebUI.
+It is an independent, experimental tool developed in-house at HENN. 
+It is not made by McNeel and not by Open WebUI.
 
 ---
 
@@ -12,14 +15,14 @@ It is an independent, experimental tool. It is not made by McNeel and not by Ope
 
 When you connect, **the chat model can run any command in Rhino, including code, and can read
 and write files on your computer** — anything you could do yourself. There is no "are you sure?"
-step before each action and no safe mode.
+step before each action, and no safe mode.
 
 In practice, that means:
 
 - **Save your work before you connect.** Try it on a copy of a model first, not on something you
   care about.
 - **Only connect to an Open WebUI you trust.** Whoever controls it, and whichever model you
-  chat with, effectively has your hands in Rhino.
+  chat with, effectively has their hands in your Rhino.
 - **Watch what it does.** If you ask it to tidy up a model, it may delete more than you meant.
 - **Don't run Rhino as administrator** while using this.
 
@@ -31,11 +34,12 @@ If any of that is not acceptable for the machine you are on, stop here.
 
 1. **Windows, and Rhino 8.** It will not work on a Mac.
 2. **RhinoAI already working in Rhino.** Type `MCPStart` into the Rhino command line and press
-   Enter. If Rhino says it doesn't know that command, you need to install McNeel's RhinoAI /
-   Rhino-MCP-Platform first — that is a separate thing from this plugin, and nothing here works
-   without it.
-3. **An Open WebUI you can log into**, in a browser on this same computer.
-4. **Open WebUI permissions to create API key and add user-specific integrations**, as that is what the tool uses to connect to Open WebUI. You can set the connection manually without an API key, but you need to add user-specific integrations to connect to an MCP server running on your computer.
+   Enter. If Rhino says it doesn't know that command, you need to install McNeel's Rhino-MCP-Platform
+   first — that is a separate thing from this plugin, and nothing here works without it.
+4. **An Open WebUI you can log into**, in a browser on this same computer.
+5. **Open WebUI permissions to create API key and add user-specific integrations**, as that is what
+   the tool uses to connect to Open WebUI. You can set the connection manually without an API key,
+   but you need to add user-specific integrations to connect to an MCP server running on your computer.
 4. **The plugin file**, `RhinoOuiRelay.rhp`, plus the files that come with it. Keep them together in
    one folder.
 
