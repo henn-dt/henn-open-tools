@@ -11,7 +11,31 @@ It is not made by McNeel and not by Open WebUI.
 
 ---
 
-## Read this part first
+## Contents
+
+- [Read this part first](#read-this-first)
+- [What you need before you start](#requirements)
+- [Setting it up — once](#setup)
+  - [Step 1 — Open the settings](#step-1-settings)
+  - [Step 2 — Tell it where RhinoAI is](#step-2-router)
+  - [Step 3 — Connect](#step-3-connect)
+  - [Step 4 — Fill in your Open WebUI details](#step-4-open-webui-details)
+  - [Step 5 — Tell Open WebUI about it](#step-5-integration)
+  - [Step 6 — Reload your browser](#step-6-reload)
+  - [Step 7 — Try it](#step-7-try-it)
+- [Using it day to day](#day-to-day)
+- [When something goes wrong](#troubleshooting)
+  - [The dot next to the router box is red](#red-dot)
+  - [Nothing happens when I click Start link](#start-link-error)
+  - [Connected, but the chat can't see any Rhino tools](#no-tools)
+  - [It worked yesterday and today it doesn't](#stopped-working)
+  - [I need to report a problem](#report-a-problem)
+- [Things worth knowing](#worth-knowing)
+- [Words you'll see](#glossary)
+
+---
+
+## Read this part first {#read-this-first}
 
 When you connect, **the chat model can run any command in Rhino, including code, and can read
 and write files on your computer** — anything you could do yourself. There is no "are you sure?"
@@ -30,18 +54,19 @@ If any of that is not acceptable for the machine you are on, stop here.
 
 ---
 
-## What you need before you start
+## What you need before you start {#requirements}
 
 1. **Windows, and Rhino 8.** It will not work on a Mac.
 2. **RhinoAI already working in Rhino.** Type `MCPStart` into the Rhino command line and press
    Enter. If Rhino says it doesn't know that command, you need to install McNeel's Rhino-MCP-Platform
    first — that is a separate thing from this plugin, and nothing here works without it.
-4. **An Open WebUI you can log into**, in a browser on this same computer.
-5. **Open WebUI permissions to create API key and add user-specific integrations**, as that is what
+3. **An Open WebUI you can log into**, in a browser on this same computer.
+4. **Open WebUI permissions to create API key and add user-specific integrations**, as that is what
    the tool uses to connect to Open WebUI. You can set the connection manually without an API key,
    but you need to add user-specific integrations to connect to an MCP server running on your computer.
-4. **The plugin file**, `RhinoOuiRelay.rhp`, plus the files that come with it. Keep them together in
-   one folder.
+5. **The plugin, installed from its `.yak` package.** Once it is installed, a small toolbar with
+   four buttons appears in Rhino: **Link**, **Settings**, **Monitor**, **Help**. If you don't see it,
+   type `OpenWebUIRelayToolbar` into the Rhino command line and press Enter.
 
 ![Rhino's command line after MCPStart has succeeded](images/mcpstart-works.png)
 <!-- capture: the Rhino command line right after typing MCPStart, showing it worked -->
@@ -49,33 +74,11 @@ If any of that is not acceptable for the machine you are on, stop here.
 
 ---
 
-## Installing it
-
-1. Close Rhino if it is open.
-2. Put the plugin folder somewhere permanent — not your Downloads folder. If you move it later,
-   Rhino loses track of it.
-3. If Windows marked the files as "blocked" because they came from the internet: right-click
-   `RhinoOuiRelay.rhp` → **Properties** → tick **Unblock** → **OK**.
-4. Start Rhino, go to **Tools → Options → Plug-ins → Install**, and pick `RhinoOuiRelay.rhp`.
-5. A small toolbar with four buttons appears: **Link**, **Settings**, **Monitor**, **Help**.
-
-If you don't see the toolbar, type `OpenWebUIRelayToolbar` into the Rhino command line and press
-Enter.
-
-![The Rhino Plug-in Manager listing RhinoOuiRelay](images/plugin-manager.png)
-<!-- capture: Tools > Options > Plug-ins, with RhinoOuiRelay visible in the list -->
-
-![The RhinoOuiRelay toolbar: Link, Settings, Monitor and Help](images/toolbar.png)
-<!-- capture: the four buttons only, cropped tight -->
-
-
----
-
-## Setting it up — once
+## Setting it up — once {#setup}
 
 You only do this once. After that, connecting is one click.
 
-### Step 1 — Open the settings
+### Step 1 — Open the settings {#step-1-settings}
 
 Click **Settings** on the toolbar.
 
@@ -83,7 +86,7 @@ Click **Settings** on the toolbar.
 <!-- capture: the whole settings window, nothing filled in yet -->
 
 
-### Step 2 — Tell it where RhinoAI is
+### Step 2 — Tell it where RhinoAI is {#step-2-router}
 
 Look at the top box, **RhinoAI router**.
 
@@ -113,7 +116,7 @@ Hover over the dot at any time and it will tell you what it thinks is wrong.
      To force red, rename rhino-mcp-router.exe briefly, or type a nonsense path -->
 
 
-### Step 3 — Connect
+### Step 3 — Connect {#step-3-connect}
 
 1. Click **Start link**.
 2. A warning appears about what the tools can do. Read it, and click **Yes** if you agree.
@@ -128,7 +131,7 @@ found.
 <!-- capture: blur the bridge API key -->
 
 
-### Step 4 — Fill in your Open WebUI details
+### Step 4 — Fill in your Open WebUI details {#step-4-open-webui-details}
 
 Scroll down to the **Open WebUI** box.
 
@@ -148,13 +151,13 @@ Finally, hit **Save Settings**
 <!-- capture: blur the key field -->
 
 
-### Step 5 — Tell Open WebUI about it
+### Step 5 — Tell Open WebUI about it {#step-5-integration}
 
 Still in Settings, click **Add / update my Open WebUI integration**, and confirm.
 
 This hands Open WebUI the address and password it needs to reach Rhino.
 
-### Step 6 — Reload your browser
+### Step 6 — Reload your browser {#step-6-reload}
 
 **This step is easy to miss and nothing works without it.** Go to your Open WebUI tab, reload the
 page (F5), and start a **new** chat. If the browser asks for permission to reach devices on your
@@ -164,7 +167,7 @@ local network, allow it.
 <!-- capture: the browser's own permission prompt, not an Open WebUI dialog -->
 
 
-### Step 7 — Try it
+### Step 7 — Try it {#step-7-try-it}
 
 In the new chat, activate the tool
 
@@ -184,7 +187,7 @@ If it answers with something about your model, you're done.
 
 ---
 
-## Using it day to day
+## Using it day to day {#day-to-day}
 
 1. Open Rhino.
 2. Click **Link** on the toolbar and accept the warning.
@@ -199,19 +202,19 @@ When you are finished, click **Unlink / stop**. Closing Rhino also stops it.
 
 ---
 
-## When something goes wrong
+## When something goes wrong {#troubleshooting}
 
-### The dot next to the router box is red
+### The dot next to the router box is red {#red-dot}
 
 The plugin cannot find RhinoAI. Hover over the dot — it says why. Usually: run `MCPConnect` in
 Rhino, copy what it gives you, and paste it into the box.
 
-### Nothing happens when I click Start link, or it reports an error
+### Nothing happens when I click Start link, or it reports an error {#start-link-error}
 
 Run `MCPStart` in Rhino by hand and see what it says. If that fails, the problem is with RhinoAI,
 not with this plugin.
 
-### Rhino says it's connected, but the chat can't see any Rhino tools
+### Rhino says it's connected, but the chat can't see any Rhino tools {#no-tools}
 
 Nearly always one of these, in order of likelihood:
 
@@ -222,13 +225,13 @@ Nearly always one of these, in order of likelihood:
 3. **The browser blocked it.** Allow local network access if it asked, and try a different
    browser if your workplace locks yours down.
 
-### It worked yesterday and today it doesn't
+### It worked yesterday and today it doesn't {#stopped-working}
 
 Click **Add / update my Open WebUI integration** again, then reload the browser. If you clicked
 **Regenerate key** at some point, this is expected — that deliberately changes the password and
 Open WebUI needs telling.
 
-### I need to report a problem
+### I need to report a problem {#report-a-problem}
 
 Click **Monitor** on the toolbar. It shows the status and a log. Use **Copy manual setup
 instructions** or **Open in editor** to get the details, and send those along with what you were
@@ -240,7 +243,7 @@ doing.
 
 ---
 
-## Things worth knowing
+## Things worth knowing {#worth-knowing}
 
 **It can see other open Rhino windows.** If you have several Rhino files open, the model may find
 and change the wrong one. Ask it which session it is working on before you let it edit anything.
@@ -253,7 +256,7 @@ closes those too, and they may lose unsaved work.
 
 ---
 
-## Words you'll see
+## Words you'll see {#glossary}
 
 | In the plugin | What it means |
 |---|---|

@@ -1,0 +1,18 @@
+<style>
+  .anchor { margin-left: .4em; font-weight: normal; text-decoration: none; opacity: 0; }
+  h2:hover .anchor, h3:hover .anchor, .anchor:focus { opacity: 1; }
+  h2[id], h3[id] { scroll-margin-top: 1rem; }
+</style>
+<script>
+  // Add a "#" link after every heading that has an id, so its URL can be copied and shared.
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.post-content h2[id], .post-content h3[id], .page-content h2[id], .page-content h3[id]').forEach(function (h) {
+      var a = document.createElement('a');
+      a.className = 'anchor';
+      a.href = '#' + h.id;
+      a.setAttribute('aria-label', 'Link to this section');
+      a.textContent = '#';
+      h.appendChild(a);
+    });
+  });
+</script>

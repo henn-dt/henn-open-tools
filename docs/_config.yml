@@ -9,6 +9,12 @@ plugins:
   - jekyll-titles-from-headings
   - jekyll-readme-index
 
+# The layout prints the page title itself, so take the first heading out of the body
+# rather than showing it twice.
+titles_from_headings:
+  enabled: true
+  strip_title: true
+
 # Notes for whoever maintains the screenshots, not part of the guide.
 exclude:
   - "**/images/README.md"
