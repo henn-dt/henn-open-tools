@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="24" height="24"
+     viewBox="0 0 24 24"
+     fill="none" stroke="#1B1C1C" stroke-width="1.5"
+     stroke-linecap="round" stroke-linejoin="round">
+  <title>HENN open tools</title>
+  <!-- The relay's own mark, copied from assets/icons/link.svg in henn-dt/MCP-OpenwebUI-Relay,
+       so the tab icon and the package tile in Rhino's Package Manager are the same drawing.
+       The dark ink is that file's own stroke-dark value; here it is a real media query rather
+       than an attribute for the icon baker, because a favicon is rendered outside the page and
+       cannot inherit anything from it. A CSS rule beats the presentation attribute above. -->
+  <style>
+    @media (prefers-color-scheme: dark) { svg { stroke: #FFF } }
+  </style>
+  <path d="M 6.3 2.4 H 17.7 A 4.3 4.3 0 0 1 22 6.7 V 14.1 A 4.3 4.3 0 0 1 17.7 18.4 H 7.8 L 4.1 22.6 V 17.3 C 4.1 15.6 2 14.8 2 13 V 6.7 A 4.3 4.3 0 0 1 6.3 2.4 Z" />
+  <path d="M 12 15 V 5.8" />
+  <path d="M 8.65 9.8 L 12 5.8 L 15.35 9.8" />
+</svg>
