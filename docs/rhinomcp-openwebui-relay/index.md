@@ -144,7 +144,7 @@ If you tick **Remember this key on this machine**, you won't have to paste it ag
 
 Finally, hit **Save Settings**
 
-![How to enable and create Open Webui API keys - link to OUI official docs](https://docs.openwebui.com/features/authentication-access/api-keys/#getting-started)
+[How to enable and create Open Webui API keys - link to OUI official docs](https://docs.openwebui.com/features/authentication-access/api-keys/#getting-started)
 <!-- capture: Open WebUI > Settings > Account > API keys. Blur any real key -->
 
 ![The Open WebUI box in settings, filled in](images/settings-openwebui.png)
